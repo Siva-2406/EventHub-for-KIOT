@@ -52,18 +52,18 @@ export const StudentHome: React.FC = () => {
         <div className="relative z-10 max-w-3xl space-y-9">
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-wider bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
             <Sparkles className="w-4 h-4 text-indigo-400" />
-            <span>Discover. Register. Schedule. Never Miss an Event.</span>
+            <span>Knowledge Institute of Technology (KIOT) • Salem, Tamil Nadu</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Every College Event. <br />
+            Every KIOT Event. <br />
             <span className="text-indigo-400">
               One Place.
             </span>
           </h1>
 
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed font-normal">
-            Discover workshops, hackathons, symposiums, cultural events, sports, career opportunities, and inter-college summits — all unified under one verified platform.
+            Discover workshops, symposiums, hackathons, technical paper presentations, cultural fests, sports meets, and inter-college opportunities — all unified for KIOT students.
           </p>
 
           {/* Hero Action Buttons */}
@@ -73,7 +73,7 @@ export const StudentHome: React.FC = () => {
               className="flex items-center gap-3 px-8 py-4 rounded-2xl text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-colors shadow-sm"
             >
               <Compass className="w-4 h-4" />
-              <span>Explore Events</span>
+              <span>Explore KIOT Events</span>
               <ArrowRight className="w-4 h-4 text-indigo-200" />
             </button>
 
@@ -85,7 +85,7 @@ export const StudentHome: React.FC = () => {
               className="flex items-center gap-2.5 px-7 py-4 rounded-2xl text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors"
             >
               <PlusCircle className="w-4 h-4 text-slate-400" />
-              <span>Host / Create Event</span>
+              <span>Host KIOT Event</span>
             </button>
           </div>
 
@@ -185,11 +185,11 @@ export const StudentHome: React.FC = () => {
             <div className="flex items-center gap-3">
               <TrendingUp className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
-                Trending Upcoming Events
+                Trending Upcoming Events at KIOT
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-              Rapidly filling workshops and events scheduled this month
+              Rapidly filling workshops and events scheduled across KIOT engineering departments
             </p>
           </div>
 

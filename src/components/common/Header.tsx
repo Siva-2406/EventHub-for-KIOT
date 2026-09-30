@@ -121,14 +121,14 @@ export const Header: React.FC = () => {
               <div>
                 <div className="flex items-center gap-2.5">
                   <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
-                    EventHub
+                    KIOT EventHub
                   </span>
                   <span className="text-[11px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 dark:bg-indigo-950/80 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-800/60">
-                    Campus
+                    KIOT Campus
                   </span>
                 </div>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-normal hidden sm:block">
-                  Every College Event. One Place.
+                  Knowledge Institute of Technology
                 </p>
               </div>
             </button>
@@ -140,7 +140,7 @@ export const Header: React.FC = () => {
               <Search className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Search events, workshops, hackathons, colleges..."
+                placeholder="Search KIOT events, workshops, symposiums, hackathons..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => setSearchFocused(true)}

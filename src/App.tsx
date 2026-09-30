@@ -104,8 +104,8 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col font-sans transition-colors selection:bg-indigo-500 selection:text-white">
-      {/* Top Demo Banner with Role Switcher for Judges */}
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col font-serif transition-colors selection:bg-indigo-500 selection:text-white">
+      {/* Top Campus Announcement Banner & Role Switcher */}
       <DemoBanner />
 
       {/* Global Navigation Header */}
@@ -126,10 +126,10 @@ const AppContent: React.FC = () => {
               </div>
               <div>
                 <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white">
-                  EventHub
+                  KIOT EventHub
                 </span>
                 <p className="text-xs sm:text-sm text-slate-500 mt-1">
-                  Every College Event. One Place. Discover. Register. Schedule. Never Miss an Event.
+                  Knowledge Institute of Technology (KIOT) • Every College Event. One Place.
                 </p>
               </div>
             </div>
@@ -137,9 +137,9 @@ const AppContent: React.FC = () => {
             <div className="flex flex-wrap items-center gap-6 text-xs sm:text-sm text-slate-500">
               <span className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700">
                 <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                <span>Phase 1 Architecture Ready for MongoDB Atlas & JWT</span>
+                <span>Knowledge Institute of Technology (KIOT) • Salem, Tamil Nadu</span>
               </span>
-              <span>Knowledge Institute of Technology (KIOT)</span>
+              <span>Kakapalayam, Salem - 637 504</span>
             </div>
           </div>
         </div>

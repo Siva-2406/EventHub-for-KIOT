@@ -95,15 +95,15 @@ export const MySchedule: React.FC = () => {
           </p>
         </div>
 
-        {/* Demo Helper Button for Judges */}
+        {/* Schedule Conflict Simulator */}
         {!isRegisteredForWebExpo && (
           <button
             onClick={handleSimulateConflict}
             className="self-start sm:self-auto flex items-center gap-2 px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/30 hover:bg-amber-500/20 transition-all shadow-xs"
-            title="Registers for Web Expo 2026 which clashes with AI Workshop on Oct 5"
+            title="Tests overlap with Web Expo 2026 which clashes with AI Workshop on Oct 5"
           >
             <Sparkles className="w-4 h-4" />
-            <span>⚡ Demo: Trigger Schedule Conflict</span>
+            <span>⚡ Test Schedule Conflict Overlap</span>
           </button>
         )}
       </div>

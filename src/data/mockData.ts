@@ -251,7 +251,7 @@ export const INITIAL_EVENTS: CollegeEvent[] = [
     id: 'evt-104',
     title: 'Web Expo 2026: The Modern Frontend',
     shortDescription: 'State of web development: Server components, WebAssembly, Island architecture & Edge runtime.',
-    description: 'Explore where modern web development is heading. From instantaneous edge-rendered applications to micro-frontends and WebAssembly graphics pipelines. This event overlaps with the morning schedule of October 5th for demo conflict testing.',
+    description: 'Explore where modern web development is heading. From instantaneous edge-rendered applications to micro-frontends and WebAssembly graphics pipelines. This keynote session is hosted as part of the regional web technologies consortium.',
     college: 'XYZ Institute of Technology',
     category: 'Web Expo',
     mode: 'offline',

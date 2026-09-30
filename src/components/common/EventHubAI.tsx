@@ -31,7 +31,7 @@ export const EventHubAI: React.FC = () => {
     {
       id: 'init-1',
       sender: 'assistant',
-      text: `Hello ${currentUser.name.split(' ')[0]}! 👋 I'm **EventHub AI**, your campus event assistant.\n\nAsk me about upcoming workshops, what's live on campus, your registered schedule, or any schedule conflicts!`,
+      text: `Hello ${currentUser.name.split(' ')[0]}! 👋 I'm **KIOT EventHub AI**, your Knowledge Institute of Technology campus event assistant.\n\nAsk me about upcoming workshops, what's live on campus, your registered schedule, or any schedule conflicts!`,
       timestamp: 'Just now',
       suggestedActions: [
         { label: '🔴 What is live now?', actionId: 'query_live' },
