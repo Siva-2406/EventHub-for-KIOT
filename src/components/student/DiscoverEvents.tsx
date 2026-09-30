@@ -93,25 +93,25 @@ export const DiscoverEvents: React.FC = () => {
     search || selectedCategory !== 'all' || collegeFilter !== 'all' || modeFilter !== 'all' || statusFilter !== 'all';
 
   return (
-    <div className="space-y-6 pb-16">
+    <div className="space-y-12 pb-24">
       {/* Top Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="space-y-2">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
             Discover Campus & Inter-College Events
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-            Browse through hundreds of workshops, technical symposiums, hackathons, and cultural fests.
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            Browse through workshops, technical symposiums, hackathons, and cultural fests.
           </p>
         </div>
 
         {/* College Scope Filter Tabs (Requirement 16) */}
-        <div className="flex items-center bg-slate-100 dark:bg-slate-800/80 p-1 rounded-2xl border border-slate-200 dark:border-slate-700/80 shrink-0 self-start md:self-auto">
+        <div className="flex items-center bg-slate-100 dark:bg-slate-800/80 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-700/80 shrink-0 self-start md:self-auto gap-1.5">
           <button
             onClick={() => setCollegeFilter('all')}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
               collegeFilter === 'all'
-                ? 'bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm'
+                ? 'bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-xs'
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
             }`}
           >
@@ -119,9 +119,9 @@ export const DiscoverEvents: React.FC = () => {
           </button>
           <button
             onClick={() => setCollegeFilter('my-college')}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+            className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 ${
               collegeFilter === 'my-college'
-                ? 'bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm'
+                ? 'bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-xs'
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
             }`}
           >
@@ -130,9 +130,9 @@ export const DiscoverEvents: React.FC = () => {
           </button>
           <button
             onClick={() => setCollegeFilter('other')}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+            className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 ${
               collegeFilter === 'other'
-                ? 'bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm'
+                ? 'bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-xs'
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
             }`}
           >
@@ -143,22 +143,22 @@ export const DiscoverEvents: React.FC = () => {
       </div>
 
       {/* Search & Filter Bar */}
-      <div className="bg-white dark:bg-slate-900 p-4 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
-        <div className="flex flex-col sm:flex-row gap-3">
+      <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200/70 dark:border-slate-800 shadow-xs space-y-6">
+        <div className="flex flex-col sm:flex-row gap-4">
           {/* Main Search Input */}
           <div className="relative flex-1">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search events, workshops, hackathons, colleges..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full pl-11 pr-4 py-3.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
             {search && (
               <button
                 onClick={() => setSearch('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1"
               >
                 <X className="w-3.5 h-3.5" />
               </button>
@@ -169,7 +169,7 @@ export const DiscoverEvents: React.FC = () => {
           <select
             value={modeFilter}
             onChange={(e) => setModeFilter(e.target.value as typeof modeFilter)}
-            className="px-3.5 py-2.5 text-xs font-medium bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="px-4 py-3.5 text-xs sm:text-sm font-medium bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 rounded-2xl text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             <option value="all">All Modes</option>
             <option value="offline">Offline (On-Campus)</option>
@@ -181,7 +181,7 @@ export const DiscoverEvents: React.FC = () => {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value as typeof statusFilter)}
-            className="px-3.5 py-2.5 text-xs font-medium bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="px-4 py-3.5 text-xs sm:text-sm font-medium bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 rounded-2xl text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             <option value="all">All Statuses</option>
             <option value="upcoming">Upcoming</option>
@@ -193,7 +193,7 @@ export const DiscoverEvents: React.FC = () => {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-            className="px-3.5 py-2.5 text-xs font-medium bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="px-4 py-3.5 text-xs sm:text-sm font-medium bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 rounded-2xl text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             <option value="date">Sort: By Date</option>
             <option value="popular">Sort: Most Popular</option>
@@ -202,10 +202,10 @@ export const DiscoverEvents: React.FC = () => {
         </div>
 
         {/* Category Pills Strip */}
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pt-1">
+        <div className="flex items-center gap-2.5 overflow-x-auto no-scrollbar pt-2">
           <button
             onClick={() => setSelectedCategory('all')}
-            className={`whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
+            className={`whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium transition-all ${
               selectedCategory === 'all'
                 ? 'bg-indigo-600 text-white shadow-xs'
                 : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
@@ -217,9 +217,9 @@ export const DiscoverEvents: React.FC = () => {
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.name)}
-              className={`whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+              className={`whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium transition-all ${
                 selectedCategory.toLowerCase() === cat.name.toLowerCase()
-                  ? 'bg-indigo-600 text-white font-bold shadow-xs'
+                  ? 'bg-indigo-600 text-white font-semibold shadow-xs'
                   : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
               }`}
             >
@@ -251,26 +251,26 @@ export const DiscoverEvents: React.FC = () => {
 
       {/* Events Grid */}
       {filteredEvents.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {filteredEvents.map((evt) => (
             <EventCard key={evt.id} event={evt} />
           ))}
         </div>
       ) : (
         /* Empty State */
-        <div className="p-12 text-center bg-white dark:bg-slate-900 rounded-3xl border border-dashed border-slate-300 dark:border-slate-800 space-y-3">
+        <div className="p-16 sm:p-20 text-center bg-white dark:bg-slate-900 rounded-3xl border border-dashed border-slate-300 dark:border-slate-800 space-y-5">
           <div className="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400 mx-auto flex items-center justify-center">
             <Search className="w-8 h-8" />
           </div>
-          <h3 className="text-base font-bold text-slate-900 dark:text-white">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-white">
             No events match your criteria
           </h3>
-          <p className="text-xs text-slate-500 max-w-sm mx-auto">
+          <p className="text-sm text-slate-500 max-w-md mx-auto">
             Try adjusting your search terms, changing the category, or selecting &quot;All Colleges&quot;.
           </p>
           <button
             onClick={clearAllFilters}
-            className="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-colors shadow-sm"
+            className="px-6 py-3 rounded-2xl text-xs sm:text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-colors shadow-sm"
           >
             Clear All Filters
           </button>

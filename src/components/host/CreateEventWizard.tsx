@@ -129,19 +129,19 @@ export const CreateEventWizard: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6 pb-16">
+    <div className="max-w-4xl mx-auto space-y-10 pb-24">
       {/* Header */}
-      <div>
-        <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+      <div className="space-y-2">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
           Create & Host New College Event
         </h1>
-        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+        <p className="text-sm text-slate-500 dark:text-slate-400">
           Follow the 6-step guided wizard to draft, configure, and submit your event for institutional verification.
         </p>
       </div>
 
       {/* Stepper Progress Bar */}
-      <div className="bg-white dark:bg-slate-900 p-4 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
+      <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200/70 dark:border-slate-800 shadow-xs">
         <div className="flex items-center justify-between">
           {steps.map((label, idx) => {
             const stepNum = idx + 1;
@@ -161,7 +161,7 @@ export const CreateEventWizard: React.FC = () => {
 
                 <button
                   onClick={() => setCurrentStep(stepNum)}
-                  className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all relative z-10 ${
+                  className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-all relative z-10 ${
                     isDone
                       ? 'bg-indigo-600 text-white'
                       : isCurrent
@@ -172,7 +172,7 @@ export const CreateEventWizard: React.FC = () => {
                   {isDone ? <CheckCircle2 className="w-4 h-4" /> : stepNum}
                 </button>
                 <span
-                  className={`text-[10px] mt-1.5 font-semibold hidden md:block ${
+                  className={`text-xs mt-2 font-semibold hidden md:block ${
                     isCurrent ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-400'
                   }`}
                 >
@@ -185,7 +185,7 @@ export const CreateEventWizard: React.FC = () => {
       </div>
 
       {/* Step Form Containers */}
-      <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-sm">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/70 dark:border-slate-800 p-8 sm:p-10 shadow-xs">
         {/* Step 1: Basic Information */}
         {currentStep === 1 && (
           <div className="space-y-4 animate-in fade-in">

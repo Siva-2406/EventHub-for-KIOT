@@ -23,24 +23,24 @@ export const HostDashboard: React.FC = () => {
   const pendingCount = hostEvents.filter((e) => e.approvalStatus === 'pending').length;
 
   return (
-    <div className="space-y-8 pb-16">
+    <div className="space-y-12 pb-24">
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-indigo-900 via-indigo-950 to-slate-900 rounded-3xl p-6 sm:p-8 text-white border border-indigo-800/60 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-        <div>
+      <div className="bg-gradient-to-r from-indigo-900 via-indigo-950 to-slate-900 rounded-3xl p-8 sm:p-12 text-white border border-indigo-800/60 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-8">
+        <div className="space-y-2">
           <span className="text-xs font-bold uppercase tracking-wider text-indigo-300">
             Host / Coordinator Portal
           </span>
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1 text-white">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white">
             Welcome back, {currentUser.name.split(' ')[0]}
           </h1>
-          <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
+          <p className="text-sm text-slate-300 max-w-xl leading-relaxed">
             Manage your campus sessions, track registrations, verify participant attendance, and monitor feedback analytics.
           </p>
         </div>
 
         <button
           onClick={() => setActiveTab('create-event')}
-          className="flex items-center gap-2 px-6 py-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-white text-indigo-950 hover:bg-slate-100 shadow-xl transition-all self-start sm:self-auto shrink-0"
+          className="flex items-center gap-2.5 px-7 py-4 rounded-2xl text-xs sm:text-sm font-bold bg-white text-indigo-950 hover:bg-slate-100 shadow-xl transition-all self-start sm:self-auto shrink-0"
         >
           <PlusCircle className="w-4 h-4 text-indigo-600" />
           <span>Create New Event</span>
@@ -48,73 +48,73 @@ export const HostDashboard: React.FC = () => {
       </div>
 
       {/* Statistics Cards (Requirement 25) */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
-          <div className="flex items-center justify-between text-slate-400 mb-2">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="bg-white dark:bg-slate-900 p-7 rounded-3xl border border-slate-200/70 dark:border-slate-800 shadow-xs space-y-2">
+          <div className="flex items-center justify-between text-slate-400">
             <span className="text-xs font-bold uppercase tracking-wider">Total Events</span>
             <Calendar className="w-4 h-4 text-indigo-500" />
           </div>
-          <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
+          <div className="text-3xl font-extrabold text-slate-900 dark:text-white">
             {hostEvents.length}
           </div>
-          <div className="text-[11px] text-slate-500 mt-1">Across 4 departments</div>
+          <div className="text-xs text-slate-500">Across 4 departments</div>
         </div>
 
-        <div className="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
-          <div className="flex items-center justify-between text-slate-400 mb-2">
+        <div className="bg-white dark:bg-slate-900 p-7 rounded-3xl border border-slate-200/70 dark:border-slate-800 shadow-xs space-y-2">
+          <div className="flex items-center justify-between text-slate-400">
             <span className="text-xs font-bold uppercase tracking-wider">Total Registrations</span>
             <Users className="w-4 h-4 text-emerald-500" />
           </div>
-          <div className="text-2xl sm:text-3xl font-black text-emerald-600 dark:text-emerald-400">
+          <div className="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">
             {totalRegistrations}
           </div>
-          <div className="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold mt-1">
+          <div className="text-xs text-emerald-600 dark:text-emerald-400 font-semibold">
             +18% from last month
           </div>
         </div>
 
-        <div className="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
-          <div className="flex items-center justify-between text-slate-400 mb-2">
+        <div className="bg-white dark:bg-slate-900 p-7 rounded-3xl border border-slate-200/70 dark:border-slate-800 shadow-xs space-y-2">
+          <div className="flex items-center justify-between text-slate-400">
             <span className="text-xs font-bold uppercase tracking-wider">Upcoming & Live</span>
             <Clock className="w-4 h-4 text-rose-500" />
           </div>
-          <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
+          <div className="text-3xl font-extrabold text-slate-900 dark:text-white">
             {upcomingCount + liveCount}
           </div>
-          <div className="text-[11px] text-rose-500 font-semibold mt-1">
+          <div className="text-xs text-rose-500 font-semibold">
             {liveCount} live right now
           </div>
         </div>
 
-        <div className="bg-white dark:bg-slate-900 p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
-          <div className="flex items-center justify-between text-slate-400 mb-2">
+        <div className="bg-white dark:bg-slate-900 p-7 rounded-3xl border border-slate-200/70 dark:border-slate-800 shadow-xs space-y-2">
+          <div className="flex items-center justify-between text-slate-400">
             <span className="text-xs font-bold uppercase tracking-wider">Avg. Attendance</span>
             <TrendingUp className="w-4 h-4 text-purple-500" />
           </div>
-          <div className="text-2xl sm:text-3xl font-black text-purple-600 dark:text-purple-400">
+          <div className="text-3xl font-extrabold text-purple-600 dark:text-purple-400">
             86.4%
           </div>
-          <div className="text-[11px] text-slate-500 mt-1">Based on QR check-ins</div>
+          <div className="text-xs text-slate-500">Based on QR check-ins</div>
         </div>
       </div>
 
       {/* Visual Analytics Charts (SVG Based) */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Registrations Trend Bar Chart */}
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+        <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200/70 dark:border-slate-800 shadow-xs space-y-6">
           <div className="flex items-center justify-between">
-            <div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">
+            <div className="space-y-1">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                 Registrations by Month
               </h3>
-              <p className="text-xs text-slate-500">Student enrollment growth across 2026</p>
+              <p className="text-xs sm:text-sm text-slate-500">Student enrollment growth across 2026</p>
             </div>
-            <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950 px-2.5 py-1 rounded-xl">
+            <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950 px-3 py-1 rounded-xl">
               2026 Term
             </span>
           </div>
 
-          <div className="h-48 flex items-end justify-between gap-3 pt-4 px-2">
+          <div className="h-52 flex items-end justify-between gap-4 pt-6 px-3">
             {[
               { month: 'Jun', count: 120, height: '40%' },
               { month: 'Jul', count: 190, height: '60%' },
@@ -122,8 +122,8 @@ export const HostDashboard: React.FC = () => {
               { month: 'Sep', count: 320, height: '95%' },
               { month: 'Oct', count: 280, height: '85%' },
             ].map((bar, idx) => (
-              <div key={idx} className="flex-1 flex flex-col items-center gap-2 h-full justify-end group">
-                <span className="text-[10px] font-bold text-slate-500 group-hover:text-indigo-600 transition-colors">
+              <div key={idx} className="flex-1 flex flex-col items-center gap-2.5 h-full justify-end group">
+                <span className="text-xs font-bold text-slate-500 group-hover:text-indigo-600 transition-colors">
                   {bar.count}
                 </span>
                 <div
@@ -139,54 +139,54 @@ export const HostDashboard: React.FC = () => {
         </div>
 
         {/* Capacity vs Attendance Doughnut / Gauge */}
-        <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 flex flex-col justify-between">
-          <div>
-            <h3 className="text-base font-bold text-slate-900 dark:text-white">
+        <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200/70 dark:border-slate-800 shadow-xs space-y-6 flex flex-col justify-between">
+          <div className="space-y-1">
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white">
               Capacity Utilization & Turnout
             </h3>
-            <p className="text-xs text-slate-500">Average seat occupancy across hosted events</p>
+            <p className="text-xs sm:text-sm text-slate-500">Average seat occupancy across hosted events</p>
           </div>
 
-          <div className="space-y-4">
-            <div>
-              <div className="flex justify-between text-xs font-semibold mb-1">
+          <div className="space-y-5">
+            <div className="space-y-1.5">
+              <div className="flex justify-between text-xs sm:text-sm font-semibold">
                 <span className="text-slate-700 dark:text-slate-300">MongoDB Tech Odyssey</span>
                 <span className="text-emerald-600">128 / 200 (64%)</span>
               </div>
-              <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+              <div className="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                 <div className="bg-emerald-500 h-full rounded-full" style={{ width: '64%' }} />
               </div>
             </div>
 
-            <div>
-              <div className="flex justify-between text-xs font-semibold mb-1">
+            <div className="space-y-1.5">
+              <div className="flex justify-between text-xs sm:text-sm font-semibold">
                 <span className="text-slate-700 dark:text-slate-300">Python Data Science Workshop</span>
                 <span className="text-rose-500">242 / 250 (97% - Few seats)</span>
               </div>
-              <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+              <div className="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                 <div className="bg-rose-500 h-full rounded-full" style={{ width: '97%' }} />
               </div>
             </div>
 
-            <div>
-              <div className="flex justify-between text-xs font-semibold mb-1">
+            <div className="space-y-1.5">
+              <div className="flex justify-between text-xs sm:text-sm font-semibold">
                 <span className="text-slate-700 dark:text-slate-300">INFOTRON 2026 Technical Symposium</span>
                 <span className="text-indigo-600">310 / 400 (78%)</span>
               </div>
-              <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+              <div className="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                 <div className="bg-indigo-600 h-full rounded-full" style={{ width: '78%' }} />
               </div>
             </div>
           </div>
 
-          <div className="pt-2 flex items-center justify-between text-xs text-slate-500 border-t border-slate-100 dark:border-slate-800">
+          <div className="pt-4 flex items-center justify-between text-xs sm:text-sm text-slate-500 border-t border-slate-100 dark:border-slate-800">
             <span>Overall campus engagement: <strong>Very High</strong></span>
             <button
               onClick={() => setActiveTab('host-analytics')}
-              className="font-bold text-indigo-600 dark:text-indigo-400 hover:underline flex items-center gap-1"
+              className="font-bold text-indigo-600 dark:text-indigo-400 hover:underline flex items-center gap-1.5"
             >
               <span>Detailed Analytics</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>

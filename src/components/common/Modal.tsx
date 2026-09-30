@@ -50,24 +50,24 @@ export const Modal: React.FC<ModalProps> = ({
       />
 
       {/* Modal Dialog */}
-      <div className="flex min-h-full items-center justify-center p-4 sm:p-6 text-center">
+      <div className="flex min-h-full items-center justify-center p-4 sm:p-8 text-center">
         <div
-          className={`w-full ${maxWidthClass} transform overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-left align-middle shadow-2xl transition-all relative z-10 animate-in fade-in zoom-in-95 duration-200`}
+          className={`w-full ${maxWidthClass} transform overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800 text-left align-middle shadow-2xl transition-all relative z-10 animate-in fade-in zoom-in-95 duration-200`}
         >
           {title && (
-            <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 px-6 py-4">
-              <h3 className="text-base font-bold text-slate-900 dark:text-white leading-6">
+            <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 px-8 py-5">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-6">
                 {title}
               </h3>
               <button
                 onClick={onClose}
-                className="rounded-xl p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                className="rounded-xl p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
               >
-                <X className="w-4 h-4" />
+                <X className="w-5 h-5" />
               </button>
             </div>
           )}
-          <div className="p-6">{children}</div>
+          <div className="p-8 sm:p-10">{children}</div>
         </div>
       </div>
     </div>

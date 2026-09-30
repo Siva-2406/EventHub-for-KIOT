@@ -46,36 +46,35 @@ export const StudentHome: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-10 pb-16">
+    <div className="space-y-24 sm:space-y-28 pb-28">
       {/* Hero Section */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-indigo-900 via-indigo-950 to-slate-950 text-white p-8 sm:p-12 lg:p-16 border border-indigo-800/50 shadow-2xl">
-        <div className="absolute inset-0 bg-[radial-gradient(#6366f1_1px,transparent_1px)] [background-size:24px_24px] opacity-15" />
-        <div className="relative z-10 max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-400/30 backdrop-blur-md">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+      <section className="relative overflow-hidden rounded-3xl bg-slate-900 text-white p-10 sm:p-16 lg:p-20 border border-slate-800 shadow-xl">
+        <div className="relative z-10 max-w-3xl space-y-9">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-wider bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+            <Sparkles className="w-4 h-4 text-indigo-400" />
             <span>Discover. Register. Schedule. Never Miss an Event.</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
             Every College Event. <br />
-            <span className="bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-300 bg-clip-text text-transparent">
+            <span className="text-indigo-400">
               One Place.
             </span>
           </h1>
 
-          <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed font-normal">
             Discover workshops, hackathons, symposiums, cultural events, sports, career opportunities, and inter-college summits — all unified under one verified platform.
           </p>
 
           {/* Hero Action Buttons */}
-          <div className="flex flex-wrap items-center gap-3 pt-2">
+          <div className="flex flex-wrap items-center gap-5 pt-3">
             <button
               onClick={() => setActiveTab('discover')}
-              className="flex items-center gap-2 px-6 py-3.5 rounded-2xl text-xs sm:text-sm font-bold bg-white text-indigo-950 hover:bg-slate-100 shadow-xl transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="flex items-center gap-3 px-8 py-4 rounded-2xl text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-colors shadow-sm"
             >
-              <Compass className="w-4 h-4 text-indigo-600" />
+              <Compass className="w-4 h-4" />
               <span>Explore Events</span>
-              <ArrowRight className="w-4 h-4 text-slate-400" />
+              <ArrowRight className="w-4 h-4 text-indigo-200" />
             </button>
 
             <button
@@ -83,16 +82,16 @@ export const StudentHome: React.FC = () => {
                 setRole('host');
                 setActiveTab('create-event');
               }}
-              className="flex items-center gap-2 px-6 py-3.5 rounded-2xl text-xs sm:text-sm font-semibold bg-white/10 hover:bg-white/15 text-white border border-white/20 backdrop-blur-md transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="flex items-center gap-2.5 px-7 py-4 rounded-2xl text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors"
             >
-              <PlusCircle className="w-4 h-4 text-indigo-300" />
+              <PlusCircle className="w-4 h-4 text-slate-400" />
               <span>Host / Create Event</span>
             </button>
           </div>
 
           {/* Quick Categories Bar */}
-          <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-white/10">
-            <span className="text-xs text-slate-400 font-medium mr-1">Popular:</span>
+          <div className="flex flex-wrap items-center gap-3 pt-8 border-t border-slate-800">
+            <span className="text-xs text-slate-400 font-medium mr-1.5">Popular:</span>
             {heroCategories.map((c, i) => (
               <button
                 key={i}
@@ -100,7 +99,7 @@ export const StudentHome: React.FC = () => {
                   setSelectedCategory(c.query);
                   setActiveTab('discover');
                 }}
-                className="px-3 py-1 rounded-full text-xs bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 transition-colors"
+                className="px-4 py-2 rounded-full text-xs font-medium bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 text-slate-300 transition-colors"
               >
                 {c.label}
               </button>
@@ -115,30 +114,30 @@ export const StudentHome: React.FC = () => {
       </section>
 
       {/* Recommended For You (Personalized Discovery) */}
-      <section className="space-y-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-              <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+      <section className="space-y-8">
+        <div className="flex items-center justify-between gap-4">
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-3">
+              <Sparkles className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
                 Recommended For You
               </h2>
             </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
               Personalized for {currentUser.name} based on your interests: {currentUser.interests.slice(0, 3).join(', ')}
             </p>
           </div>
 
           <button
             onClick={() => setActiveTab('discover')}
-            className="flex items-center gap-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
+            className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
           >
             <span>View All</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {recommendedEvents.map((evt) => (
             <EventCard key={evt.id} event={evt} />
           ))}
@@ -146,33 +145,33 @@ export const StudentHome: React.FC = () => {
       </section>
 
       {/* Inter-College Opportunities */}
-      <section className="space-y-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <div className="flex items-center gap-2">
-              <Globe className="w-4 h-4 text-purple-600 dark:text-purple-400" />
-              <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+      <section className="space-y-8">
+        <div className="flex items-center justify-between gap-4">
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-3">
+              <Globe className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
                 Inter-College Opportunities
               </h2>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">
+              <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">
                 Partner Campuses
               </span>
             </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
               Hackathons and symposiums hosted at partner universities open for KIOT students
             </p>
           </div>
 
           <button
             onClick={() => setActiveTab('discover')}
-            className="flex items-center gap-1 text-xs font-semibold text-purple-600 dark:text-purple-400 hover:underline"
+            className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-purple-600 dark:text-purple-400 hover:underline"
           >
             <span>Explore All</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {interCollegeEvents.map((evt) => (
             <EventCard key={evt.id} event={evt} />
           ))}
@@ -180,30 +179,30 @@ export const StudentHome: React.FC = () => {
       </section>
 
       {/* Trending & Upcoming Events */}
-      <section className="space-y-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <div className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-              <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+      <section className="space-y-8">
+        <div className="flex items-center justify-between gap-4">
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-3">
+              <TrendingUp className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
                 Trending Upcoming Events
               </h2>
             </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
               Rapidly filling workshops and events scheduled this month
             </p>
           </div>
 
           <button
             onClick={() => setActiveTab('discover')}
-            className="flex items-center gap-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
+            className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
           >
             <span>Browse All ({publicEvents.length})</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {trendingEvents.map((evt) => (
             <EventCard key={evt.id} event={evt} />
           ))}

@@ -112,30 +112,30 @@ const AppContent: React.FC = () => {
       <Header />
 
       {/* Main View Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-6 sm:px-10 lg:px-14 py-12 sm:py-16">
         {renderActiveView()}
       </main>
 
       {/* Footer */}
-      <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10 mt-auto transition-colors">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold shadow-md">
-                <Calendar className="w-4 h-4" />
+      <footer className="bg-white dark:bg-slate-900 border-t border-slate-200/70 dark:border-slate-800 py-16 sm:py-20 mt-28 transition-colors">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-2xl bg-indigo-600 flex items-center justify-center text-white font-bold shadow-sm">
+                <Calendar className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-sm font-black tracking-tight bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  EVENTHUB
+                <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white">
+                  EventHub
                 </span>
-                <p className="text-[11px] text-slate-500">
+                <p className="text-xs sm:text-sm text-slate-500 mt-1">
                   Every College Event. One Place. Discover. Register. Schedule. Never Miss an Event.
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500">
-              <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div className="flex flex-wrap items-center gap-6 text-xs sm:text-sm text-slate-500">
+              <span className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700">
                 <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                 <span>Phase 1 Architecture Ready for MongoDB Atlas & JWT</span>
               </span>

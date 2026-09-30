@@ -83,14 +83,14 @@ export const MySchedule: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6 pb-16">
+    <div className="space-y-12 pb-24">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div className="space-y-2">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
             My Event Schedule Timeline
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          <p className="text-sm text-slate-500 dark:text-slate-400">
             Chronological calendar of all sessions, workshops, and lab competitions you are registered for.
           </p>
         </div>
@@ -99,10 +99,10 @@ export const MySchedule: React.FC = () => {
         {!isRegisteredForWebExpo && (
           <button
             onClick={handleSimulateConflict}
-            className="self-start sm:self-auto flex items-center gap-2 px-3.5 py-2 rounded-2xl text-xs font-bold bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/30 hover:bg-amber-500/20 transition-all shadow-xs"
+            className="self-start sm:self-auto flex items-center gap-2 px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/30 hover:bg-amber-500/20 transition-all shadow-xs"
             title="Registers for Web Expo 2026 which clashes with AI Workshop on Oct 5"
           >
-            <Sparkles className="w-3.5 h-3.5" />
+            <Sparkles className="w-4 h-4" />
             <span>⚡ Demo: Trigger Schedule Conflict</span>
           </button>
         )}
@@ -110,21 +110,21 @@ export const MySchedule: React.FC = () => {
 
       {/* ⚠️ MAJOR FEATURE: Schedule Conflict Detected Banner (Requirement 13) */}
       {detectedConflicts.length > 0 && (
-        <div className="rounded-3xl bg-amber-50 dark:bg-amber-950/40 border-2 border-amber-400/80 dark:border-amber-500/50 p-6 space-y-4 shadow-lg animate-in fade-in">
-          <div className="flex items-start gap-3.5">
-            <div className="p-2.5 rounded-2xl bg-amber-500 text-white shadow-md shrink-0">
+        <div className="rounded-3xl bg-amber-50 dark:bg-amber-950/40 border-2 border-amber-400/80 dark:border-amber-500/50 p-8 space-y-6 shadow-lg animate-in fade-in">
+          <div className="flex items-start gap-4">
+            <div className="p-3 rounded-2xl bg-amber-500 text-white shadow-md shrink-0">
               <AlertTriangle className="w-6 h-6" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-200 dark:bg-amber-900/80 text-amber-900 dark:text-amber-200">
+              <div className="flex items-center gap-2.5">
+                <span className="text-xs font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-amber-200 dark:bg-amber-900/80 text-amber-900 dark:text-amber-200">
                   CRITICAL ALERT
                 </span>
-                <h3 className="text-base font-extrabold text-amber-950 dark:text-amber-200">
+                <h3 className="text-lg font-extrabold text-amber-950 dark:text-amber-200">
                   ⚠ Schedule Conflict Detected
                 </h3>
               </div>
-              <p className="text-xs sm:text-sm text-amber-800 dark:text-amber-300 mt-1 leading-relaxed">
+              <p className="text-sm text-amber-800 dark:text-amber-300 mt-1.5 leading-relaxed">
                 You have <strong>overlapping registered events</strong> scheduled at the same time. Review the conflicting sessions below to plan your attendance:
               </p>
             </div>
@@ -134,31 +134,31 @@ export const MySchedule: React.FC = () => {
           {detectedConflicts.map((pair, idx) => (
             <div
               key={idx}
-              className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white/80 dark:bg-slate-900/80 p-4 rounded-2xl border border-amber-200 dark:border-amber-900/60"
+              className="grid grid-cols-1 md:grid-cols-2 gap-5 bg-white/80 dark:bg-slate-900/80 p-5 rounded-2xl border border-amber-200 dark:border-amber-900/60"
             >
               {/* Event A */}
               <div
                 onClick={() => openEventModal(pair.eventA)}
-                className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 hover:border-amber-400 cursor-pointer transition-all"
+                className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 hover:border-amber-400 cursor-pointer transition-all"
               >
-                <div className="flex items-center justify-between text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">
+                <div className="flex items-center justify-between text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">
                   <span>Registered Session 1</span>
                   <span className="text-indigo-600 dark:text-indigo-400">{pair.eventA.category}</span>
                 </div>
-                <h4 className="text-sm font-bold text-slate-900 dark:text-white line-clamp-1">
+                <h4 className="text-base font-bold text-slate-900 dark:text-white line-clamp-1">
                   {pair.eventA.title}
                 </h4>
-                <div className="text-xs text-slate-500 truncate mb-2">
+                <div className="text-xs sm:text-sm text-slate-500 truncate mb-3">
                   {pair.eventA.college}
                 </div>
 
-                <div className="space-y-1 text-xs text-slate-600 dark:text-slate-300">
-                  <div className="flex items-center gap-1.5 font-bold text-rose-600 dark:text-rose-400">
-                    <Clock className="w-3.5 h-3.5" />
+                <div className="space-y-1.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                  <div className="flex items-center gap-2 font-bold text-rose-600 dark:text-rose-400">
+                    <Clock className="w-4 h-4" />
                     <span>{pair.eventA.startTime} – {pair.eventA.endTime}</span>
                   </div>
-                  <div className="flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-slate-400" />
                     <span className="truncate">{pair.eventA.venue}</span>
                   </div>
                 </div>
@@ -167,26 +167,26 @@ export const MySchedule: React.FC = () => {
               {/* Event B */}
               <div
                 onClick={() => openEventModal(pair.eventB)}
-                className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 hover:border-amber-400 cursor-pointer transition-all"
+                className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 hover:border-amber-400 cursor-pointer transition-all"
               >
-                <div className="flex items-center justify-between text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">
+                <div className="flex items-center justify-between text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">
                   <span>Registered Session 2</span>
                   <span className="text-indigo-600 dark:text-indigo-400">{pair.eventB.category}</span>
                 </div>
-                <h4 className="text-sm font-bold text-slate-900 dark:text-white line-clamp-1">
+                <h4 className="text-base font-bold text-slate-900 dark:text-white line-clamp-1">
                   {pair.eventB.title}
                 </h4>
-                <div className="text-xs text-slate-500 truncate mb-2">
+                <div className="text-xs sm:text-sm text-slate-500 truncate mb-3">
                   {pair.eventB.college}
                 </div>
 
-                <div className="space-y-1 text-xs text-slate-600 dark:text-slate-300">
-                  <div className="flex items-center gap-1.5 font-bold text-rose-600 dark:text-rose-400">
-                    <Clock className="w-3.5 h-3.5" />
+                <div className="space-y-1.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                  <div className="flex items-center gap-2 font-bold text-rose-600 dark:text-rose-400">
+                    <Clock className="w-4 h-4" />
                     <span>{pair.eventB.startTime} – {pair.eventB.endTime}</span>
                   </div>
-                  <div className="flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-slate-400" />
                     <span className="truncate">{pair.eventB.venue}</span>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ export const MySchedule: React.FC = () => {
             </div>
           ))}
 
-          <div className="text-[11px] text-amber-900 dark:text-amber-200 font-medium">
+          <div className="text-xs text-amber-900 dark:text-amber-200 font-medium">
             💡 <em>EventHub preserves both your registrations and never cancels anything automatically. You can freely choose which session to physically attend or cancel your seat from My Events.</em>
           </div>
         </div>

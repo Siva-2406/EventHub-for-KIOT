@@ -18,28 +18,28 @@ export const DemoBanner: React.FC = () => {
   };
 
   return (
-    <aside aria-label="Demo announcement banner" className="bg-slate-900 border-b border-indigo-950/60 text-slate-300 text-xs px-4 py-2 relative z-50">
-      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+    <aside aria-label="Demo announcement banner" className="bg-slate-900 border-b border-slate-800 text-slate-300 text-xs px-6 sm:px-10 lg:px-12 py-3 sm:py-3.5 relative z-50">
+      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-6">
         {/* Banner Announcement */}
-        <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
-            PHASE 1 DEMO MODE
+        <div className="flex items-center gap-3.5">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+            <span className="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+            DEMO MODE
           </span>
-          <span className="hidden sm:inline text-slate-400">
-            Every College Event. One Place. Clean service abstraction prepared for MongoDB Atlas & JWT in Phase 2.
+          <span className="hidden sm:inline text-slate-400 text-xs leading-relaxed">
+            Every College Event. One Place. Prepared for MongoDB Atlas & JWT in Phase 2.
           </span>
         </div>
 
         {/* Interactive Role Switcher for Judges */}
-        <div className="flex items-center gap-2">
-          <span className="text-[11px] text-slate-400 hidden md:inline font-medium">Switch View:</span>
-          <div className="flex items-center bg-slate-800/90 rounded-lg p-0.5 border border-slate-700/60 shadow-inner">
+        <div className="flex items-center gap-4">
+          <span className="text-xs text-slate-400 hidden md:inline font-medium">Switch View:</span>
+          <div className="flex items-center bg-slate-800 rounded-xl p-1 gap-1 border border-slate-700/80">
             <button
               onClick={() => setRole('student')}
-              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium transition-all ${
+              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 role === 'student'
-                  ? 'bg-indigo-600 text-white shadow-sm font-semibold'
+                  ? 'bg-indigo-600 text-white shadow-xs font-semibold'
                   : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/50'
               }`}
             >
@@ -49,21 +49,21 @@ export const DemoBanner: React.FC = () => {
 
             <button
               onClick={() => setRole('host')}
-              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium transition-all ${
+              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 role === 'host'
-                  ? 'bg-indigo-600 text-white shadow-sm font-semibold'
+                  ? 'bg-indigo-600 text-white shadow-xs font-semibold'
                   : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/50'
               }`}
             >
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Host / Organizer</span>
+              <span>Host</span>
             </button>
 
             <button
               onClick={() => setRole('admin')}
-              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium transition-all ${
+              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 role === 'admin'
-                  ? 'bg-indigo-600 text-white shadow-sm font-semibold'
+                  ? 'bg-indigo-600 text-white shadow-xs font-semibold'
                   : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/50'
               }`}
             >
@@ -75,9 +75,9 @@ export const DemoBanner: React.FC = () => {
           <button
             onClick={handleResetData}
             title="Reset to default mock state"
-            className="p-1 rounded-md text-slate-400 hover:text-indigo-400 hover:bg-slate-800 transition-colors"
+            className="p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
           >
-            <RefreshCw className="w-3.5 h-3.5" />
+            <RefreshCw className="w-4 h-4" />
           </button>
         </div>
       </div>
